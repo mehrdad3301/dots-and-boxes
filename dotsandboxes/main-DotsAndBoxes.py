@@ -1,7 +1,7 @@
 import logging
 
-import coloredlogs
-
+import sys 
+sys.path.append('..')
 from Coach import Coach
 from utils import dotdict
 from dotsandboxes.keras.NNet import NNetWrapper as nn
@@ -9,8 +9,6 @@ from dotsandboxes.keras.NNet import NNetWrapper as nn
 from dotsandboxes.DotsAndBoxesGame import DotsAndBoxesGame
 
 log = logging.getLogger(__name__)
-
-coloredlogs.install(level='INFO')  # Change this to DEBUG to see more info.
 
 args = dotdict({
     'numIters': 1000,
@@ -36,7 +34,7 @@ args['numEps'] = 25
 
 def main():
     log.info('Loading %s...', DotsAndBoxesGame.__name__)
-    g = DotsAndBoxesGame(n=3)
+    g = DotsAndBoxesGame(n=6)
     log.info('Loading %s...', nn.__name__)
     nnet = nn(g)
     if args.load_model:
