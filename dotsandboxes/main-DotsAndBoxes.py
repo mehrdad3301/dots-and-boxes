@@ -9,6 +9,7 @@ from dotsandboxes.keras.NNet import NNetWrapper as nn
 from dotsandboxes.DotsAndBoxesGame import DotsAndBoxesGame
 
 log = logging.getLogger(__name__)
+logging.basicConfig(filename="logs", filemode="w")
 
 args = dotdict({
     'numIters': 1000,
