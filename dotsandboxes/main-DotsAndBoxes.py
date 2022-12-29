@@ -1,15 +1,16 @@
 import logging
+import coloredlogs
 
 import sys 
 sys.path.append('..')
+
 from Coach import Coach
 from utils import dotdict
 from dotsandboxes.keras.NNet import NNetWrapper as nn
-
 from dotsandboxes.DotsAndBoxesGame import DotsAndBoxesGame
 
 log = logging.getLogger(__name__)
-logging.basicConfig(filename="logs", filemode="w")
+coloredlogs.install(level='DEBUG')
 
 args = dotdict({
     'numIters': 1000,

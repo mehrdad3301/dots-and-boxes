@@ -1,5 +1,7 @@
 
 import logging
+import coloredlogs 
+
 import os
 import sys
 from collections import deque
@@ -13,8 +15,6 @@ from Arena import Arena
 from MCTS import MCTS
 
 log = logging.getLogger(__name__)
-logging.basicConfig(filename="logs", filemode="w")
-
 
 class Coach():
     """
